@@ -4,7 +4,7 @@ from . import main
 from .. import db,photos
 from ..models import User,Blog,Comment,Upvote,Downvote
 from .forms import UpdateProfile,BlogForm,CommentForm
-from ..requests import get_quote
+from ..requests import get_quotes
 
 # Views
 @main.route('/')
