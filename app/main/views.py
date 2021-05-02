@@ -4,15 +4,17 @@ from . import main
 from .. import db,photos
 from ..models import User,Blog,Comment,Upvote,Downvote
 from .forms import UpdateProfile,BlogForm,CommentForm
+from ..requests import get_quote
 
 # Views
 @main.route('/')
 def index():
+    quote = get_quote()
     blogs = Blog.query.all()
     food = Blog.query.filter_by(category = 'food').all() 
     music= Blog.query.filter_by(category = 'music').all()
     fashion= Blog.query.filter_by(category = 'fashion').all()
-    return render_template('index.html', food = food,music=music, fashion= fashion)
+    return render_template('index.html', food = food,music=music, fashion= fashion ,quote = quote)
 
 @main.route('/create_new', methods = ['POST','GET'])
 @login_required

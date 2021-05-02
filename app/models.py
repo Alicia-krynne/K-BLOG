@@ -71,6 +71,16 @@ class Blog(db.Model):
     def __repr__(self):
         return f'Blog {self.post}'
 
+class Quote:
+    """
+    Quote class to define Quote Objects
+    """
+
+    def __init__(self, id, author, quote):
+        self.id = id
+        self.author = author
+        self.quote = quote
+
 
 class Comment(db.Model):
     __tablename__ = 'comments'

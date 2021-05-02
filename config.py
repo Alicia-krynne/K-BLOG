@@ -2,6 +2,7 @@ import os
 
 class Config:
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://macrine:Alicemacrine!@localhost/blog'
+    QUOTE_API_BASE_URL = "http://quotes.stormconsultancy.co.uk/random.json"
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
     SECRET_KEY = os.environ.get("SECRET_KEY")
