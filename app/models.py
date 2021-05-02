@@ -5,15 +5,14 @@ from . import login_manager
 from datetime import datetime
 
 
-class (UserMixin,db.Model):
-    __tablename__ = 'blog'
+class User(UserMixin,db.Model):
+    __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key = True)
     username = db.Column(db.String(255),unique = True,nullable = False)
     email  = db.Column(db.String(255),unique = True,nullable = False)
     secure_password = db.Column(db.String(50),unique = True)
     bio = db.Column(db.String(255))
     profile_pic_path = db.Column(db.String())
-    role_id = db.Column(db.Integer,db.ForeignKey('roles.id'))
     blogs = db.relationship('Blog', backref='user', lazy='dynamic')
 
     @property
@@ -38,17 +37,18 @@ class (UserMixin,db.Model):
         return f'User {self.username}'
 
 
+    '''
+    class Role(db.Model):
+        __tablename__ = 'roles'
 
-class Role(db.Model):
-    __tablename__ = 'roles'
-
-    id = db.Column(db.Integer,primary_key = True)
-    name = db.Column(db.String(255))
-    users = db.relationship('User',backref = 'role',lazy="dynamic")
+        id = db.Column(db.Integer,primary_key = True)
+        name = db.Column(db.String(255))
+        users = db.relationship('User',backref = 'role',lazy="dynamic")
 
 
-    def __repr__(self):
-        return f'User {self.name}'
+        def __repr__(self):
+            return f'User {self.name}'
+    '''
 
 class Blog(db.Model):
     __tablename__ = 'blogs'
@@ -102,7 +102,7 @@ class Upvote(db.Model):
 
     id = db.Column(db.Integer,primary_key=True)
     user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
-    blog_id = db.Column(db.Integer,db.ForeignKey('bloges.id'))
+    blog_id = db.Column(db.Integer,db.ForeignKey('blogs.id'))
     
 
     def save(self):
@@ -122,7 +122,7 @@ class Downvote(db.Model):
 
     id = db.Column(db.Integer,primary_key=True)
     user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
-    blog_id = db.Column(db.Integer,db.ForeignKey('bloges.id'))
+    blog_id = db.Column(db.Integer,db.ForeignKey('blogs.id'))
     
 
     def save(self):

@@ -2,17 +2,17 @@ from flask import render_template,redirect,url_for,abort,request
 from flask_login import login_required,current_user
 from . import main
 from .. import db,photos
-from ..models import User,Blog,Comment,Upvote,Downvote,Role
+from ..models import User,Blog,Comment,Upvote,Downvote
 from .forms import UpdateProfile,BlogForm,CommentForm
 
 # Views
 @main.route('/')
 def index():
     blogs = Blog.query.all()
-    Kfood = Blog.query.filter_by(category = 'Kfood').all() 
-    kpop = Blog.query.filter_by(category = 'kpop').all()
-    kfashion= Blog.query.filter_by(category = 'kfashion').all()
-    return render_template('index.html', kfood = kfood,kpop =kpop, kfashion= kfashion)
+    food = Blog.query.filter_by(category = 'food').all() 
+    music= Blog.query.filter_by(category = 'music').all()
+    fashion= Blog.query.filter_by(category = 'fashion').all()
+    return render_template('index.html', food = food,music=music, fashion= fashion)
 
 @main.route('/create_new', methods = ['POST','GET'])
 @login_required

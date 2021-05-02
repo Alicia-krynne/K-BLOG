@@ -3,8 +3,13 @@ from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from config import config_options
 from flask_login import LoginManager
-from flask_uploads import UploadSet,configure_uploads,IMAGES
+from flask_uploads import UploadSet,configure_uploads,IMAGES,secure_filename
 from flask_mail import Mail
+#from werkzeug.utils import secure_filename
+#from werkzeug.datastructures import  FileStorage
+#from werkzeug import secure_filename, FileStorage
+
+
 
 db = SQLAlchemy()
 bootstrap = Bootstrap()
@@ -13,6 +18,8 @@ login_manager.session_protection = 'strong'
 login_manager.login_view = 'auth.login'
 photos = UploadSet('photos',IMAGES)
 mail = Mail()
+#secure_filename = secure_filename
+#FileStorage = FileStorage
 
 
 
