@@ -16,18 +16,18 @@ def index():
 
 @main.route('/create_new', methods = ['POST','GET'])
 @login_required
-def new_Blog():
+def new_blog():
     form = BlogForm()
     if form.validate_on_submit():
         title = form.title.data
         post = form.post.data
         category = form.category.data
         user_id = current_user
-        new_Blog_object = Blog(post=post,user_id=current_user._get_current_object().id,category=category,title=title)
-        new_Blog_object.save_p()
+        new_blog_object = Blog(post=post,user_id=current_user._get_current_object().id,category=category,title=title)
+        new_blog_object.save_p()
         return redirect(url_for('main.index'))
         
-    return render_template('new_Blog.html', form = form)
+    return render_template('new_blog.html', form = form)
 
 @main.route('/comment/<int:Blog_id>', methods = ['POST','GET'])
 @login_required
