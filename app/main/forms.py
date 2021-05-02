@@ -6,9 +6,9 @@ class UpdateProfile(FlaskForm):
     bio = TextAreaField('Write a brief bio about you.',validators = [Required()])
     submit = SubmitField('Save')
 
-class PitchForm(FlaskForm):
+class Blogform(FlaskForm):
     title = StringField('Title', validators=[Required()])
-    category = SelectField('Category', choices=[('Bonvoyage','Bonvoyage'),('Concert','Concert'),('Run','Run')],validators=[Required()])
+    category = SelectField('Category', choices=[('Kfood','kfood'),('Kpop','Kpop'),('Kfashion','Kfashion')],validators=[Required()])
     post = TextAreaField('Your Pitch', validators=[Required()])
     submit = SubmitField('Pitch')
 
