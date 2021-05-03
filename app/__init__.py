@@ -17,9 +17,8 @@ mail = Mail()
 # Initializing application
 def create_app(config_name):
     app = Flask(__name__)
-    app.config.from_object(config_options[config_name])
-
     db.init_app(app)
+    app.config.from_object(config_options[config_name])
     bootstrap.init_app(app)
     login_manager.init_app(app)
     configure_uploads(app,photos)
