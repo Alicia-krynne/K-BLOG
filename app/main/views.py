@@ -9,7 +9,7 @@ from ..requests import get_quotes
 # Views
 @main.route('/')
 def index():
-    quote = get_quote()
+    quote = get_quotes()
     blogs = Blog.query.all()
     food = Blog.query.filter_by(category = 'food').all() 
     music= Blog.query.filter_by(category = 'music').all()

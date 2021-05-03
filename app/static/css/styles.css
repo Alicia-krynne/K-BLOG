@@ -96,4 +96,23 @@
     #imgform{
       display: none;
     }
+
+    .card-body {
+      flex-wrap: wrap;
+      padding-top: 2%;
+      border-radius: 10px;
+      height: 80%;
+      background-color: ghostwhite;
+    }
     
+class-text {
+color: deeppink;
+font-family: cursive;
+}
+
+class-author{
+  color: fuchsia;
+  font-family: monospace;
+
+}
+

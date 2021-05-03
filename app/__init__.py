@@ -5,11 +5,6 @@ from config import config_options
 from flask_login import LoginManager
 from flask_uploads import UploadSet,configure_uploads,IMAGES,secure_filename
 from flask_mail import Mail
-#from werkzeug.utils import secure_filename
-#from werkzeug.datastructures import  FileStorage
-#from werkzeug import secure_filename, FileStorage
-
-
 
 db = SQLAlchemy()
 bootstrap = Bootstrap()
@@ -18,10 +13,6 @@ login_manager.session_protection = 'strong'
 login_manager.login_view = 'auth.login'
 photos = UploadSet('photos',IMAGES)
 mail = Mail()
-#secure_filename = secure_filename
-#FileStorage = FileStorage
-
-
 
 # Initializing application
 def create_app(config_name):
@@ -41,9 +32,5 @@ def create_app(config_name):
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint,url_prefix = '/authenticate')
 
-    from .requests import configure_request
     
-
-
-
     return app
