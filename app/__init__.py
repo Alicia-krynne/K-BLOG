@@ -3,7 +3,7 @@ from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from config import config_options
 from flask_login import LoginManager
-from flask_uploads import UploadSet,configure_uploads,IMAGES,secure_filename
+from flask_uploads import UploadSet,configure_uploads,IMAGES,secure_filename,DATA,ALL
 from flask_mail import Mail
 
 db = SQLAlchemy()
