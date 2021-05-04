@@ -1,4 +1,4 @@
-PITCH-60-APP
+K-BLOG 
 Author
 MACRINE ALICE ADHIAMBO "ALICIA"[https://github.com/Alicia-krynne]
 
@@ -8,7 +8,7 @@ This is application aims to  mimic a blog. it is minimalist in nature. the App a
 
 LIVE PAGE
 
-
+![DEMO]https://user-images.githubusercontent.com/78471467/117081066-d0112580-ad47-11eb-8609-17a5b4d3ce8e.mp4
 
 
 CLONNG THE  REPOSITORY:
