@@ -7,10 +7,10 @@ class UpdateProfile(FlaskForm):
     submit = SubmitField('Save')
 
 class BlogForm(FlaskForm):
-    title = StringField('Title', validators=[Required()])
-    category = SelectField('Category', choices=[('food','food'),('music','music'),('fashion','fashion')],validators=[Required()])
-    post = TextAreaField('Your Pitch', validators=[Required()])
-    submit = SubmitField('Pitch')
+    title = StringField('Title of your Blog Post', validators=[Required()])
+    category = SelectField('Choose a Category', choices=[('food','food'),('music','music'),('fashion','fashion')],validators=[Required()])
+    post = TextAreaField('Write Here', validators=[Required()])
+    submit = SubmitField('Post Blog')
 
 class CommentForm(FlaskForm):
     comment = TextAreaField('Leave a comment',validators=[Required()])
