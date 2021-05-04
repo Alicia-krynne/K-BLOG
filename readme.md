@@ -5,7 +5,9 @@ MACRINE ALICE ADHIAMBO "ALICIA"[https://github.com/Alicia-krynne]
 Description
 This is application aims to  mimic a blog. it is minimalist in nature. the App allows users to post blogs based on their interests. the user can sign in, post a blog, comment on other blogs and also like or dislike a blog.
 
-SCREENSHOTS
+
+LIVE PAGE
+
 
 
 
