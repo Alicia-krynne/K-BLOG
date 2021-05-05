@@ -5,28 +5,37 @@ from config import config_options
 from flask_login import LoginManager
 from flask_uploads import UploadSet,configure_uploads,IMAGES,secure_filename
 from flask_mail import Mail
-from flask_migrate import Migrate
+from flask_simplemde import SimpleMDE
+#from flask_migrate import Migrate
 #from werkzeug.utils import secure_filename
 
-db = SQLAlchemy()
-bootstrap = Bootstrap()
 login_manager = LoginManager()
 login_manager.session_protection = 'strong'
 login_manager.login_view = 'auth.login'
+
+simple = SimpleMDE()
+
+db = SQLAlchemy()
+bootstrap = Bootstrap()
 photos = UploadSet('photos',IMAGES)
 mail = Mail()
-migrate = Migrate()
+
+#migrate = Migrate()
 
 # Initializing application
 def create_app(config_name):
     app = Flask(__name__)
     db.init_app(app)
-    migrate.init_app(app, db, render_as_batch=True)
+    #migrate.init_app(app, db, render_as_batch=True)
+    
     app.config.from_object(config_options[config_name])
+    config_options[config_name].init_app(app)
+    
     bootstrap.init_app(app)
     login_manager.init_app(app)
     configure_uploads(app,photos)
     mail.init_app(app)
+    simple.init_app(app)
 
 
     # Registering the blueprint
