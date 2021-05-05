@@ -4,8 +4,6 @@
 <div class="container" style="margin-top: 1%">
 <div class="row">
   <div class="col-md-4 pict" >
-      
-
     <div class="card testimonial-card">
         <div class="card-img"  >
                 {% if user.profile_pic_path %}
@@ -28,7 +26,8 @@
             <div class="profpic">
                 <div id="updates">
                   <a href="{{url_for('main.updateprofile',name=user.username)}}">Edit Bio</a>
-                  <button class="btn btn-sm btn-info" id="profbutton">update pic</button>
+                            <button class="btn btn-sm btn-info" id="profbutton">update pic</button>
+
                 </div>
                 
                 <div id="imgform">

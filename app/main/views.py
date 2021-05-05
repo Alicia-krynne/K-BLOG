@@ -80,7 +80,9 @@ def update_pic(name):
         path = f'photos/{filename}'
         user.profile_pic_path = path
         db.session.commit()
-    return redirect(url_for('main.profile',name=name))
+        return redirect(url_for('main.profile',name=name))
+    return render_template('profile/update.html',form =form)
+
 
 @main.route('/like/<int:id>',methods = ['POST','GET'])
 @login_required
