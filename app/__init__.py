@@ -36,7 +36,7 @@ def create_app(config_name):
     configure_uploads(app,photos)
     mail.init_app(app)
     simple.init_app(app)
-
+    app.config['UPLOADED_PHOTOS_DEST'] = os.getcwd()
 
     # Registering the blueprint
     from .main import main as main_blueprint
