@@ -2,10 +2,10 @@
 <div class="container-fluid">
 		<div class="row">
 				{% if blogs %}
-					{% for category in blogs %}
+					{% for blog in blogs %}
 					<div class="col-md-4" >
 						<div class="thumbnail" id="carded">
-							<h5 class="card-header">{{category.title}}</h5>
+							<h5 class="card-header">{{blog.title}}</h5>
 							<div class="card-body">
 									<!--<p>{{category.post}}</p>-->
 									<p class="text-center"> Category: {{category.category}}</p>

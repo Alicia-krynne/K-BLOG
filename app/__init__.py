@@ -28,7 +28,7 @@ def create_app(config_name):
     db.init_app(app)
     #migrate.init_app(app, db, render_as_batch=True)
     
-    app.config.from_object(config_options[config_name])
+    #app.config.from_object(config_options[config_name])
     config_options[config_name].init_app(app)
     
     bootstrap.init_app(app)
