@@ -8,9 +8,9 @@ from datetime import datetime
 class User(UserMixin,db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key = True)
-    username = db.Column(db.String(255),unique = True,nullable = False)
+    username = db.Column(db.String(600),unique = True,nullable = False)
     email  = db.Column(db.String(255),unique = True,nullable = False)
-    secure_password = db.Column(db.String(255),unique = True)
+    secure_password = db.Column(db.String(600),unique = True)
     bio = db.Column(db.String(255))
     profile_pic_path = db.Column(db.String())
     blogs = db.relationship('Blog', backref='user', lazy='dynamic')
@@ -54,7 +54,6 @@ class Blog(db.Model):
     __tablename__ = 'blogs'
     id = db.Column(db.Integer, primary_key = True)
     title = db.Column(db.String(50),nullable = False)
-    subtitle = db.Column(db.Text(), nullable = False)
     comment = db.relationship('Comment',backref='blog',lazy='dynamic')
     upvote = db.relationship('Upvote',backref='blog',lazy='dynamic')
     downvote = db.relationship('Downvote',backref='blog',lazy='dynamic')

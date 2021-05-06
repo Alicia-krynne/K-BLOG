@@ -1,48 +1,26 @@
 {% extends 'base.html'%}
+
 {% import 'macros.html' as macro %}
 
 {% block content %}
     
-        <div  class="container" id="particles-js">
-                <h2 class="text-center" id="posts">K-BLOGS</h2>
-            <ul class="nav nav-pills nav-justified nav-fill" role="tablist">
-                <li class="nav-item" >
-                    <a id ="cats" class="nav-link" data-toggle="tab" href="#all"><strong>BLOGS</strong> </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id ="cats" data-toggle="tab" href="#food">K-FOOD</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id ="cats" data-toggle="tab" href="#music">K-POP</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id ="cats"data-toggle="tab" href="#fashion">K-FASHION</a>
-                </li>
-            </ul>
-            <div class="tab-content">
-                <div  class="container tab-pane active" id="all"><br>
-                    {{ macro.display(blogs)}}
-                </div>
-                <div  class="container tab-pane fade" id="bonvoyage"><br>
-                    {{ macro.display(food)}}
-                </div>
-                <div  class="container tab-pane fade" id="concert"><br>
-                    {{ macro.display(music)}}
-                </div>
-                <div  class="container tab-pane fade" id="run"><br>
-                    {{ macro.display(fashion)}}
-                    
+        
+    <div  class="container" id="particles-js">   
+        <p class="nav-item" >
+        <a id ="cats" class="nav-link" data-toggle="tab" href="{{url_for('main.index')}}"><strong>QUOTES</strong> </a>
+        </p>
+            <div class="card">
+              <div class="card-body">
+                    <p class="class-text"><i class="fas fa-quote-left"> </i> {{quote.quote}}</p>
+                    <p class="class-author"> - {{quote.author}}</p>
                 </div>
             </div>
 
-            <div class="container">
-                <div class="card">
-                  <div class="card-body">
-                        <p class="class-text"><i class="fas fa-quote-left"> </i> {{quote.quote}}</p>
-                        <p class="class-author"> - {{quote.author}}</p>
-                    </div>
-                </div>
-            </div>
-                
-        </div>
+    </div>
+    
+    
+    
+               
+         
+        
 {% endblock%}

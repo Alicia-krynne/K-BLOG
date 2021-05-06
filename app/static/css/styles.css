@@ -75,7 +75,7 @@
       color: white;
     }
     .blogs{
-      background-color: rgb(241, 147, 229);
+      background-color: rgb(248, 10, 89);
       color: black;
       padding: 2%;
       border-radius: 8px;
@@ -111,7 +111,7 @@ font-family: cursive;
 }
 
 class-author{
-  color: fuchsia;
+  color: rgb(243, 235, 243);
   font-family: monospace;
 
 }

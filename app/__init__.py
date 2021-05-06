@@ -5,6 +5,7 @@ from config import config_options
 from flask_login import LoginManager
 from flask_uploads import UploadSet,configure_uploads,IMAGES,secure_filename
 from flask_mail import Mail
+from flask_migrate import Migrate
 
 db = SQLAlchemy()
 bootstrap = Bootstrap()
@@ -13,13 +14,15 @@ login_manager.session_protection = 'strong'
 login_manager.login_view = 'auth.login'
 photos = UploadSet('photos',IMAGES)
 mail = Mail()
+migrate = Migrate()
+
 
 # Initializing application
 def create_app(config_name):
     app = Flask(__name__)
     app.config.from_object(config_options[config_name])
-
     db.init_app(app)
+    migrate.init_app(app, db, render_as_batch=True)
     bootstrap.init_app(app)
     login_manager.init_app(app)
     configure_uploads(app,photos)
@@ -33,4 +36,6 @@ def create_app(config_name):
     app.register_blueprint(auth_blueprint,url_prefix = '/authenticate')
 
     
+
+
     return app
