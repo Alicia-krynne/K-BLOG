@@ -22,10 +22,12 @@ def new_blog():
     form = BlogForm()
     if form.validate_on_submit():
         title = form.title.data
-        #post = form.post.data
+        post = form.post.data
         category = form.category.data
-        user_id = current_user
-        new_blog_object = Blog(user_id=current_user._get_current_object().id,category=category,title=title)
+        comment = form.comment.data
+        user = User.query.filter_by(username = name).first()
+        user_id = current_user._get_current_object().id
+        new_blog_object = Blog( post =post ,user_id=current_user._get_current_object().id,category=category,title=title)
         new_blog_object.save_p()
         return redirect(url_for('main.index'))
         

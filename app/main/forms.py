@@ -4,7 +4,6 @@ from wtforms.validators import Required
 
 class UpdateProfile(FlaskForm):
     bio = TextAreaField('Write a brief bio about you.',validators = [Required()])
-    photo = FileField(validators=[FileAllowed(photos, u'Image only!'), FileRequired(u'File was empty!')])
     submit = SubmitField('Save')
 
 class BlogForm(FlaskForm):
