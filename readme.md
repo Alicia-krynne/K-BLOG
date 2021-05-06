@@ -5,11 +5,15 @@ MACRINE ALICE ADHIAMBO "ALICIA"[https://github.com/Alicia-krynne]
 Description
 This is application aims to  mimic a blog. it is minimalist in nature. the App allows users to post blogs based on their interests. the user can sign in, post a blog, comment on other blogs and also like or dislike a blog.
 
+HOME PAGE 
+![image](https://user-images.githubusercontent.com/78471467/117364045-1c826f80-aec6-11eb-854f-844c92968011.png)
+
+BLOG PAGE
+![image](https://user-images.githubusercontent.com/78471467/117364410-8b5fc880-aec6-11eb-8431-8cc2d8a2b477.png)
+![image](https://user-images.githubusercontent.com/78471467/117364840-13de6900-aec7-11eb-8939-e29376162c40.png)
 
 LIVE PAGE
-
 ![DEMO]https://user-images.githubusercontent.com/78471467/117081066-d0112580-ad47-11eb-8609-17a5b4d3ce8e.mp4
-
 
 CLONNG THE  REPOSITORY:
 https://github.com/Alicia-krynne/K-BLOG
